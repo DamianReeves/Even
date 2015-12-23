@@ -213,3 +213,10 @@ _Pvt_Extensions/
 ModelManifest.xml
 
 *.bak
+
+# Build tools, output, & Artifacts
+build/tools/
+build/output/
+.fake/
+.nuget/
+!.nuget/nuget.config

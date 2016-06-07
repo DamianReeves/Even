@@ -103,7 +103,7 @@ task compile-sample-projects -depends clean-sample-projects {
 }
 
 task nuget-restore -depends acquire-buildtools {
-    $nuget = Get-NuGet 
+    $nuget = Update-NuGet 
     $cmdArgs = @("restore")
     $cmdArgs += "$sln_file"
     exec {& $nuget $cmdArgs }

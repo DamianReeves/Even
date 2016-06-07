@@ -126,10 +126,10 @@ task RunUnitTests -depends acquire-testingtools {
         $test = ls ("{0}/bin/$target_config" -f $projectDir) -Include '*.Tests.dll' -Recurse | select -First 1
                 
         $cmdArgs = @("$test")
-        $cmdArgs += "-xml"
-        $cmdArgs += '"{0}"' -f $testResultsFile
         $cmdArgs += "-notrait"
-        $cmdArgs += "Category=Unstable"
+        $cmdArgs += '"Category=Unstable"'
+        $cmdArgs += "-xml"
+        $cmdArgs += '"{0}"' -f $testResultsFile        
         if($isAppVeyorBuild) {
             $cmdArgs += "-appveyor"
         }

@@ -242,7 +242,7 @@ namespace Even.Tests
             ExpectNoMsg(TimeSpan.FromSeconds(1));
         }
 
-        [Fact(Skip="Fails in Appveyor")]
+        [Fact]
         [Trait("Category","Unstable")]
         public void Publishes_events_from_eventstream_to_subscribers()
         {

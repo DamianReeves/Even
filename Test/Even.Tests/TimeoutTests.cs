@@ -11,7 +11,7 @@ namespace Even.Tests
 {
     public class TimeoutTests
     {
-        [Theory(Skip="Fails on Appveyor")]
+        [Theory]
         [InlineData(100)]
         [InlineData(250)]
         [InlineData(500)]
@@ -26,7 +26,7 @@ namespace Even.Tests
             Assert.False(timeout.IsExpired);
         }
 
-        [Theory(Skip="Fails on Appveyor")]
+        [Theory]
         [InlineData(100)]
         [InlineData(250)]
         [InlineData(500)]

@@ -15,10 +15,10 @@
       <dependency id="Akka" version="1.0.8" />
       <dependency id="DBHelpers" version="1.1.0" />
     </dependencies>
-    
-    <files>
-      <file src="bin\Release\Even.Persistence.Sql.*" target="lib\net451" />
-    </files>
-    
+            
   </metadata>
+
+  <files>
+      <file src="bin\**\Even.Persistence.Sql.*" target="lib\net451" />
+    </files>
 </package>

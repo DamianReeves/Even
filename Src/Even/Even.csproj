@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Aggregate.cs" />
     <Compile Include="AggregateSupervisor.cs" />
     <Compile Include="AkkaAsyncHelper.cs" />

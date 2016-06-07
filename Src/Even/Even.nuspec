@@ -13,11 +13,10 @@
 
     <dependencies>
       <dependency id="Akka" version="1.0.8" />
-    </dependencies>
-    
-    <files>
-      <file src="bin\Release\Even.*" target="lib\net451" />
-    </files>
-    
+    </dependencies>    
   </metadata>
+
+    <files>
+        <file src="bin\**\Even.*" target="lib\net451" />
+    </files>
 </package>

@@ -30,6 +30,8 @@ properties {
 	if($offline -eq $null) {
 		$offline = $false
 	}
+
+    $isAppVeyorBuild = $env:APPVEYOR -eq "True"
 }
 
 FormatTaskName (("-"*25) + "[{0}]" + ("-"*30))
@@ -118,6 +120,9 @@ task RunUnitTests -depends acquire-testingtools {
         $cmdArgs = @("$test")
         $cmdArgs += "-xml"
         $cmdArgs += '"{0}"' -f $testResultsFile
+        if($isAppVeyorBuild) {
+            $cmdArgs += "-appveyor"
+        }
         exec {& $xunit_path $cmdArgs}        
     }	           
 

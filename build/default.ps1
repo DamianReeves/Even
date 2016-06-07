@@ -18,6 +18,7 @@ properties {
 
     $ilMergeModule.ilMergePath = "$base_directory\bin\ilmerge-bin\ILMerge.exe"
     $nuget_dir = "$src_directory\.nuget"
+    $sln_file = Join-Path $base_directory "Even.sln"
 
     if($build_number -eq $null) {
 		$build_number = 0
@@ -101,7 +102,14 @@ task compile-sample-projects -depends clean-sample-projects {
     }    
 }
 
-task Compile -depends compile-source-projects, compile-test-projects, compile-sample-projects {    
+task nuget-restore -depends acquire-buildtools {
+    $nuget = Get-NuGet 
+    $cmdArgs = @("restore")
+    $cmdArgs += "$sln_file"
+    exec {& $nuget $cmdArgs }
+}
+
+task Compile -depends nuget-restore, compile-source-projects, compile-test-projects, compile-sample-projects {    
 }
 
 task RunUnitTests -depends acquire-testingtools {

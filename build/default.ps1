@@ -127,7 +127,7 @@ task RunUnitTests -depends acquire-testingtools {
                 
         $cmdArgs = @("$test")
         $cmdArgs += "-notrait"
-        $cmdArgs += '"Category=Unstable"'
+        $cmdArgs += 'Category=Unstable'
         $cmdArgs += "-xml"
         $cmdArgs += '"{0}"' -f $testResultsFile        
         if($isAppVeyorBuild) {
